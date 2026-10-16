@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#0E0C0A" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#EFEAE0" media="(prefers-color-scheme: light)">
 <title>Privacy Policy — Sahsah (منبه صحصح)</title>
-<meta name="description" content="Privacy policy for the Sahsah alarm app for iPhone: your data stays on your device, what Google's ads process, and your tracking and consent choices.">
+<meta name="description" content="Privacy policy for the Sahsah alarm app for iPhone and Android: your data stays on your device, what Google's ads process, and your ads and consent choices.">
 <link rel="stylesheet" href="/sahsah/assets/sahsah.css">
 <link rel="icon" type="image/png" href="/sahsah/assets/icon.png">
 <link rel="canonical" href="https://speacetech.com/sahsah/privacy/en/">
@@ -29,7 +29,7 @@
 
   <main>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective 10 October 2026 · Applies to the <bdi lang="ar">«منبه صحصح»</bdi> iPhone app, version 1.0 (shown on the Home Screen as <bdi lang="ar">«صحصح»</bdi>). The Arabic version is the primary one; if the two differ, the Arabic governs.</p>
+    <p class="meta">Effective 16 October 2026 · Applies to the <bdi lang="ar">«منبه صحصح»</bdi> app for iPhone and for Android, version 1.0 (shown on the Home Screen as <bdi lang="ar">«صحصح»</bdi>). The Arabic version is the primary one; if the two differ, the Arabic governs.</p>
 
     <h2>Who we are</h2>
     <p>The app is published by <bdi>SPEACE TECH</bdi>, Commercial Registration No. <bdi>7054590067</bdi>, Kingdom of Saudi Arabia. Privacy contact: <a href="mailto:founder@speacetech.com"><bdi>founder@speacetech.com</bdi></a></p>
@@ -39,69 +39,111 @@
       <ul>
         <li>No account and no sign-in.</li>
         <li>Your alarms, preferences and history are stored only on your phone. We do not collect them, the app does not send them to any server, and we have no server that could receive them.</li>
-        <li>The app is free. It shows two Google banner ads, one at the top of the screen and one at the bottom, on three screens: Alarms, History and Settings; and after you end an alarm inside the app a full-screen ad may appear, which you can close. To show and measure ads, Google processes some device data, listed below.</li>
-        <li>Personalised ads appear only if you allow tracking. You can change your mind at any time, as easily as you agreed.</li>
+        <li>The app is free. To show and measure ads, Google processes some device data, listed below.
+          <ul>
+            <li><strong>On iPhone:</strong> the app shows two Google banner ads, one at the top of the screen and one at the bottom, on three screens: Alarms, History and Settings; and after you end an alarm inside the app a full-screen ad may appear, which you can close. Sahsah does not ask for tracking permission, and all its ads are non-personalised: they are not based on your device's advertising identifier or on your past activity.</li>
+            <li><strong>On Android:</strong> the app shows one Google banner ad at the bottom of the screen, on two screens only: History and Settings, and no full-screen ad. Ads may be personalised; you can turn personalisation off at any time in your phone's settings (section 3).</li>
+          </ul>
+        </li>
         <li>No ad ever appears on the alarm screen or inside a wake-up mission.</li>
       </ul>
     </section>
 
     <h2>1. Data that stays on your device and that we do not collect</h2>
-    <p>The app keeps this data on your iPhone only, in the app's on-device storage:</p>
+    <p>The app keeps this data on your phone only, in the app's on-device storage:</p>
     <ul>
       <li><strong>Alarms:</strong> time, repeat days, the name you type, tone, mission and snooze length.</li>
       <li><strong>Preferences:</strong> numeral style, appearance, night-mode hour, and the bedtime and rest length in Before bed.</li>
       <li><strong>Wake history:</strong> when you stopped or snoozed an alarm or completed its mission.</li>
     </ul>
-    <p>We receive none of it: the app does not send it anywhere, and we cannot see it. Alarms are scheduled through iOS's own alarm service (AlarmKit) on your device.</p>
-    <p>If backups are on, this data may be included in your iCloud or computer backup according to your settings; Apple manages those backups, not us.</p>
+    <p>We receive none of it: the app does not send it anywhere, and we cannot see it.</p>
+    <ul>
+      <li><strong>On iPhone:</strong> alarms are scheduled through iOS's own alarm service (AlarmKit) on your device. If backups are on, this data may be included in your iCloud or computer backup according to your settings; Apple manages those backups, not us.</li>
+      <li><strong>On Android:</strong> alarms are scheduled through Android's own alarm service on your device. Alarms, and what the alarm itself records in your history, are kept in the part of the app's storage that the system can read even before the first unlock after a restart, so that the alarm can ring. Sahsah does not back its data up to Google Drive: if you delete the app its data is erased, and if you change phones it does not move with you — except that, on some manufacturers' phones, a phone-to-phone transfer tool (by cable, for example) may carry it across.</li>
+    </ul>
+
+    <h3>Android permissions, in plain words</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Permission</th><th scope="col">Why Sahsah needs it</th></tr></thead>
+        <tbody>
+          <tr><td>Exact alarms (USE_EXACT_ALARM, and SCHEDULE_EXACT_ALARM on Android 12 and earlier)</td><td>so the alarm rings at exactly its time</td></tr>
+          <tr><td>Notifications (POST_NOTIFICATIONS)</td><td>for the notification while the alarm rings, and the snooze notification</td></tr>
+          <tr><td>Full-screen display (USE_FULL_SCREEN_INTENT)</td><td>so the alarm screen appears over the lock screen</td></tr>
+          <tr><td>Run after a restart (RECEIVE_BOOT_COMPLETED)</td><td>to set your alarms again after a restart or a time change</td></tr>
+          <tr><td>Foreground service (FOREGROUND_SERVICE, media-playback and alarm types)</td><td>so the alarm keeps sounding until you stop it, with its notification showing throughout</td></tr>
+          <tr><td>Keep the phone awake, and vibrate (WAKE_LOCK, VIBRATE)</td><td>so the alarm rings and vibrates with the screen off</td></tr>
+          <tr><td>Internet and network state (INTERNET, ACCESS_NETWORK_STATE)</td><td>for ads, and for buying and checking Sahsah Plus through Google Play only; alarms do not need the internet</td></tr>
+          <tr><td>Google Play billing (BILLING)</td><td>to buy Sahsah Plus and know the state of your subscription</td></tr>
+          <tr><td>Advertising ID (AD_ID)</td><td>added by Google's ads SDK, to show and measure ads (section 2)</td></tr>
+          <tr><td>Basic phone information (READ_BASIC_PHONE_STATE)</td><td>added by Google's ads SDK: a normal permission you are not asked for, which reads general information such as the mobile network type and the system version</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>An Android library also adds an internal permission named after the app (com.sahsah.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION), which keeps Sahsah's internal messages to Sahsah itself and gives access to no data.</p>
+    <p>Sahsah does not ask for your location, contacts, microphone, camera, photos or files.</p>
 
     <h2>2. Google ads</h2>
-    <p>The app includes the Google Mobile Ads SDK (with Google's consent tool, the User Messaging Platform). It is the only part of the app that connects to the internet. According to Google's disclosure page, the SDK may collect:</p>
+    <p>The app includes the Google Mobile Ads SDK (with Google's consent tool, the User Messaging Platform). It is the only part of the app that connects to the internet, apart from Sahsah Plus: buying it and checking your subscription go through your device's store (section 4). According to Google's two disclosure pages (iPhone and Android), the SDK may collect:</p>
     <div class="table-wrap">
       <table>
         <thead><tr><th scope="col">Data</th><th scope="col">Purpose, as Google states it</th></tr></thead>
         <tbody>
           <tr><td>IP address</td><td>to estimate the device's general location (city or region, not precise location)</td></tr>
-          <tr><td>Device ID</td><td>the device's advertising identifier (IDFA) <strong>only if you allow tracking</strong>, or app- or developer-bounded identifiers — for advertising and analytics</td></tr>
-          <tr><td>Advertising data</td><td>ads you have seen, for analytics and advertising features</td></tr>
+          <tr><td>Device ID</td><td><strong>On iPhone:</strong> app- or developer-bounded identifiers — for advertising and analytics. Sahsah does not ask for tracking permission, so the SDK does not get the device's advertising identifier (IDFA). <strong>On Android:</strong> the Android advertising ID (unless you delete it), the app set ID and, where applicable, other identifiers tied to accounts signed in on the device — for advertising, analytics and fraud prevention</td></tr>
+          <tr><td>Advertising data (iPhone)</td><td>ads you have seen, for analytics and advertising features</td></tr>
           <tr><td>Product interactions</td><td>such as app launches, taps and ad views, to improve advertising performance</td></tr>
-          <tr><td>Performance data</td><td>such as launch time and energy use, for analytics and for displaying ads</td></tr>
-          <tr><td>Crash logs</td><td>not related to you, to diagnose problems and improve the SDK</td></tr>
+          <tr><td>Performance and diagnostic data</td><td>such as launch time and energy use, for analytics and for displaying ads</td></tr>
+          <tr><td>Crash logs (iPhone)</td><td>not related to you, to diagnose problems and improve the SDK</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Source: Google, <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">App store data disclosure</a>.</p>
+    <p>Sources: Google, <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">App store data disclosure</a> for iPhone, and <a href="https://developers.google.com/admob/android/next-gen/privacy/play-data-disclosure">Google Play's data disclosure requirements</a> for Android.</p>
     <ul>
+      <li>Google says that everything the SDK collects on Android is encrypted in transit.</li>
       <li>Google does not receive your alarms, preferences or history: the app does not give them to it.</li>
       <li>Google processes this data under <a href="https://policies.google.com/privacy">its privacy policy</a>, and explains <a href="https://policies.google.com/technologies/partner-sites">how it uses data from apps that show its ads</a>.</li>
       <li>Google may process data on servers outside the Kingdom of Saudi Arabia.</li>
       <li>We share your data with no one other than Google, and we do not sell it. We rely on Google to protect what it processes to a standard no lower than the protection described in this policy, under its published terms and policy.</li>
-      <li>With no internet, with consent declined, or when no ad is available, the app works fully without ads. Alarms never depend on ads.</li>
+      <li>With no internet, or when no ad is available, the app works fully without ads. If you decline consent in Google's message, ads may continue, but non-personalised or limited. Alarms never depend on ads.</li>
     </ul>
 
-    <h2 id="choices">3. Your choices: tracking and consent</h2>
+    <h2 id="choices">3. Your choices: ads and consent</h2>
     <ul>
-      <li><strong>Google's consent message:</strong> in some regions (such as the EU, the UK and Switzerland) Google shows a consent message on first launch.</li>
-      <li><strong>iOS tracking permission:</strong> iOS then asks whether you allow <bdi lang="ar">صحصح</bdi> to track your activity. If you allow it, ads may be personalised. If you do not, every ad stays non-personalised, the advertising identifier (IDFA) is not sent, and the app works fully.</li>
-      <li><strong>Change your mind at any time:</strong>
+      <li><strong>Google's consent message:</strong> in some regions (such as the EU, the UK and Switzerland) Google shows a consent message on first launch, on iPhone and on Android. You change that choice under <bdi lang="ar">«الإعدادات»</bdi> (Settings) → <bdi lang="ar">«إدارة موافقة الإعلانات»</bdi> (Manage ad consent) where Google's message applies in your region.</li>
+    </ul>
+    <h3 id="choices-iphone">On iPhone</h3>
+    <ul>
+      <li><strong>No tracking:</strong> on iPhone, Sahsah does not ask for tracking permission, so iOS never asks you about it. Every ad is non-personalised, your device's advertising identifier (IDFA) is not used, and the app works fully.</li>
+      <li><strong>Non-personalised ads:</strong> they are based on the app's content and an approximate location (such as the city), not on your past activity. Google says it still uses device identifiers with these ads, to limit how often an ad is shown and for aggregated reporting.</li>
+      <li><strong>Google's message:</strong> if you withdraw your consent in it under <bdi lang="ar">«الإعدادات»</bdi> (Settings) → <bdi lang="ar">«إدارة موافقة الإعلانات»</bdi> (Manage ad consent) (where it applies in your region), later ads follow your new choice and may be limited. Processing done before the withdrawal remains lawful.</li>
+      <li>A «صحصح بلس» (Sahsah Plus) subscription removes all ads. Without it, non-personalised ads continue on the three screens and after an alarm is ended inside the app.</li>
+    </ul>
+    <h3 id="choices-android">On Android</h3>
+    <ul>
+      <li><strong>Ads may be personalised for you</strong>, based on your phone's advertising ID and what Google processes under its policy.</li>
+      <li><strong>Turn personalisation off at any time:</strong>
         <ul>
-          <li>iPhone Settings → <bdi lang="ar">صحصح</bdi> → Allow Tracking (one switch).</li>
-          <li>or iPhone Settings → Privacy &amp; Security → Tracking.</li>
-          <li>and in the app: the <bdi lang="ar">«الإعدادات»</bdi> (Settings) tab → <bdi lang="ar">«الإعلانات والموافقة»</bdi> (Ads and consent), and <bdi lang="ar">«إدارة موافقة الإعلانات»</bdi> (Manage ad consent) where Google's message applies in your region.</li>
+          <li>phone Settings → Privacy → Ads → "Delete advertising ID". (Menu names can differ by manufacturer and Android version.)</li>
+          <li>and in the app: the <bdi lang="ar">«الإعدادات»</bdi> (Settings) tab → <bdi lang="ar">«الإعلانات والموافقة»</bdi> (Ads and consent) opens your phone's ads or privacy settings.</li>
         </ul>
       </li>
-      <li>After you withdraw consent, later ads are non-personalised. Processing done before the withdrawal remains lawful.</li>
-      <li>A «صحصح بلس» (Sahsah Plus) subscription removes all ads. Without it, non-personalised ads continue on the three screens and after an alarm is ended inside the app.</li>
+      <li>After you delete the ID, ads continue but are not based on that ID, and Google may still use other factors under <a href="https://policies.google.com/technologies/ads">its policy</a>. You can create a new ID at any time in the same place.</li>
+      <li>A Sahsah Plus subscription removes the ad. Without it, the banner continues at the bottom of History and Settings.</li>
     </ul>
 
     <h2>4. What we do not collect</h2>
-    <p>No name, email, phone number, contacts, precise location, photos, voice recordings or health data. The app does not use the microphone or camera, and it does not measure sleep or sleep stages. The Sahsah Plus subscription is sold through Apple: Apple handles payment and renewal, and the app checks your subscription against Apple’s signature on your iPhone. It receives no payment details and sends no subscription data to any server. The app contains no analytics or crash-reporting tool of our own.</p>
-    <p>If you turn on “Share With App Developers” on your iPhone (Settings → Privacy &amp; Security → Analytics &amp; Improvements), Apple gives us aggregated crash reports and usage statistics under its own policy. You can turn it off in the same place.</p>
+    <p>No name, email, phone number, contacts, precise location, photos, voice recordings or health data. The app does not use the microphone or camera, and it does not measure sleep or sleep stages. The app contains no analytics or crash-reporting tool of our own.</p>
+    <ul>
+      <li><strong>On iPhone:</strong> the Sahsah Plus subscription is sold through Apple: Apple handles payment and renewal, and the app checks your subscription against Apple’s signature on your iPhone. It receives no payment details and sends no subscription data to any server. If you turn on “Share With App Developers” on your iPhone (Settings → Privacy &amp; Security → Analytics &amp; Improvements), Apple gives us aggregated crash reports and usage statistics under its own policy. You can turn it off in the same place.</li>
+      <li><strong>On Android:</strong> the Sahsah Plus subscription is sold through Google Play: Google handles payment and renewal, the app asks Google Play from your phone for your purchases each time the app opens or you return to it, checks your subscription against Google's signature on your phone and confirms the purchase to Google Play from your phone. It receives no payment details and sends no subscription data to any server of ours. You manage or cancel the subscription under <a href="https://play.google.com/store/account/subscriptions">Subscriptions in Google Play</a>. Google Play may give us aggregated crash and performance reports from devices whose owners chose to share usage and diagnostics data with Google, under Google's policy.</li>
+    </ul>
 
     <h2>5. Legal basis for processing</h2>
     <p>Under the Saudi Personal Data Protection Law:</p>
     <ul>
-      <li><strong>Personalised ads:</strong> your prior consent (allowing tracking, and Google's message where it applies). You can withdraw it at any time as described in section 3.</li>
+      <li><strong>Ads on iPhone:</strong> all non-personalised, on the basis given for non-personalised ads below; where Google requires your consent (such as in the EU), your consent through Google's message, which you can withdraw at any time as described in section 3.</li>
+      <li><strong>Personalised ads on Android:</strong> our legitimate interest in offering the app free of charge, funded by ads, with your right to turn personalisation off at any time as described in section 3; where Google requires your consent (such as in the EU), your consent through Google's message.</li>
       <li><strong>Non-personalised ads:</strong> our legitimate interest in offering the app free of charge, funded by ads, limited to what Google needs to serve and measure the ad and prevent fraud.</li>
     </ul>
 
@@ -117,7 +159,7 @@
     <ul>
       <li><strong>Data on your device</strong> is in your hands: edit and delete it in the app itself.</li>
       <li><strong>We hold no data about you</strong>, but write to <a href="mailto:founder@speacetech.com"><bdi>founder@speacetech.com</bdi></a> with any request or question and we will reply within 30 days.</li>
-      <li><strong>Data Google processes:</strong> stop tracking as in section 3; for requests about your data at Google, see <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+      <li><strong>Data Google processes:</strong> on iPhone the advertising identifier is not used at all, and you change your choice in Google's message where it applies; on Android, delete the advertising ID; as in section 3. For requests about your data at Google, see <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
       <li>You may lodge a complaint with the <a href="https://sdaia.gov.sa">Saudi Data &amp; AI Authority (SDAIA)</a>.</li>
     </ul>
 
@@ -125,10 +167,18 @@
     <p>Sahsah is a general-audience app and is not directed at children; we do not knowingly collect data from anyone. Its ads are set to content suitable for all ages.</p>
 
     <h2>9. Security</h2>
-    <p>Your data on your phone is protected by iOS and your device lock. The app does not transmit it, so there is no copy with us that could leak.</p>
+    <ul>
+      <li><strong>On iPhone:</strong> your data on your phone is protected by iOS and your device lock.</li>
+      <li><strong>On Android:</strong> your data on your phone is protected by Android, and your device lock protects your preferences and history. Alarms, and what the alarm itself records, are kept in storage the system makes available before the first unlock after a restart so that the alarm can ring (section 1), so Android protects them, not your device lock.</li>
+    </ul>
+    <p>The app does not transmit your data, so there is no copy with us that could leak.</p>
 
     <h2>10. Terms</h2>
-    <p>Sahsah has no terms of use of its own. <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's standard Licensed Application End User License Agreement</a> applies.</p>
+    <p>Sahsah has no terms of use of its own.</p>
+    <ul>
+      <li><strong>On iPhone:</strong> <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's standard Licensed Application End User License Agreement</a> applies.</li>
+      <li><strong>On Android:</strong> the <a href="https://play.google.com/about/play-terms/">Google Play Terms of Service</a> apply to the download, the purchase and the subscription.</li>
+    </ul>
 
     <h2>11. Changes to this policy</h2>
     <p>If what the app collects, or what another party processes, changes, we will update this page and the effective date above before the new version reaches you.</p>
