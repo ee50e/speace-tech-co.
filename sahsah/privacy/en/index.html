@@ -29,7 +29,7 @@
 
   <main>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective 16 October 2026 · Applies to the <bdi lang="ar">«منبه صحصح»</bdi> app for iPhone and for Android, version 1.0 (shown on the Home Screen as <bdi lang="ar">«صحصح»</bdi>). The Arabic version is the primary one; if the two differ, the Arabic governs.</p>
+    <p class="meta">Effective 26 October 2026 · Applies to the <bdi lang="ar">«منبه صحصح»</bdi> app for iPhone and for Android, version 1.0 and later (shown on the Home Screen as <bdi lang="ar">«صحصح»</bdi>). The Arabic version is the primary one; if the two differ, the Arabic governs.</p>
 
     <h2>Who we are</h2>
     <p>The app is published by <bdi>SPEACE TECH</bdi>, Commercial Registration No. <bdi>7054590067</bdi>, Kingdom of Saudi Arabia. Privacy contact: <a href="mailto:founder@speacetech.com"><bdi>founder@speacetech.com</bdi></a></p>
@@ -46,6 +46,7 @@
           </ul>
         </li>
         <li>No ad ever appears on the alarm screen or inside a wake-up mission.</li>
+        <li>The app asks the Capgo service for updates to its screens and text, sending a random app-scoped identifier and version numbers, never your alarms or your data (<a href="#updates">App updates</a>).</li>
       </ul>
     </section>
 
@@ -73,7 +74,7 @@
           <tr><td>Run after a restart (RECEIVE_BOOT_COMPLETED)</td><td>to set your alarms again after a restart or a time change</td></tr>
           <tr><td>Foreground service (FOREGROUND_SERVICE, media-playback and alarm types)</td><td>so the alarm keeps sounding until you stop it, with its notification showing throughout</td></tr>
           <tr><td>Keep the phone awake, and vibrate (WAKE_LOCK, VIBRATE)</td><td>so the alarm rings and vibrates with the screen off</td></tr>
-          <tr><td>Internet and network state (INTERNET, ACCESS_NETWORK_STATE)</td><td>for ads, and for buying and checking Sahsah Plus through Google Play only; alarms do not need the internet</td></tr>
+          <tr><td>Internet and network state (INTERNET, ACCESS_NETWORK_STATE)</td><td>for ads, for buying and checking Sahsah Plus through Google Play, and for checking for <a href="#updates">app updates</a>; alarms do not need the internet</td></tr>
           <tr><td>Google Play billing (BILLING)</td><td>to buy Sahsah Plus and know the state of your subscription</td></tr>
           <tr><td>Advertising ID (AD_ID)</td><td>added by Google's ads SDK, to show and measure ads (section 2)</td></tr>
           <tr><td>Basic phone information (READ_BASIC_PHONE_STATE)</td><td>added by Google's ads SDK: a normal permission you are not asked for, which reads general information such as the mobile network type and the system version</td></tr>
@@ -84,7 +85,7 @@
     <p>Sahsah does not ask for your location, contacts, microphone, camera, photos or files.</p>
 
     <h2>2. Google ads</h2>
-    <p>The app includes the Google Mobile Ads SDK (with Google's consent tool, the User Messaging Platform). It is the only part of the app that connects to the internet, apart from Sahsah Plus: buying it and checking your subscription go through your device's store (section 4). According to Google's two disclosure pages (iPhone and Android), the SDK may collect:</p>
+    <p>The app includes the Google Mobile Ads SDK (with Google's consent tool, the User Messaging Platform). It is the only part of the app that connects to the internet, apart from the <a href="#updates">update check</a> and Sahsah Plus: buying it and checking your subscription go through your device's store (section 4). According to Google's two disclosure pages (iPhone and Android), the SDK may collect:</p>
     <div class="table-wrap">
       <table>
         <thead><tr><th scope="col">Data</th><th scope="col">Purpose, as Google states it</th></tr></thead>
@@ -104,8 +105,19 @@
       <li>Google does not receive your alarms, preferences or history: the app does not give them to it.</li>
       <li>Google processes this data under <a href="https://policies.google.com/privacy">its privacy policy</a>, and explains <a href="https://policies.google.com/technologies/partner-sites">how it uses data from apps that show its ads</a>.</li>
       <li>Google may process data on servers outside the Kingdom of Saudi Arabia.</li>
-      <li>We share your data with no one other than Google, and we do not sell it. We rely on Google to protect what it processes to a standard no lower than the protection described in this policy, under its published terms and policy.</li>
+      <li>We share your data with no one other than Google, and Capgo for the <a href="#updates">update check</a>, and we do not sell it. We rely on Google to protect what it processes to a standard no lower than the protection described in this policy, under its published terms and policy.</li>
       <li>With no internet, or when no ad is available, the app works fully without ads. If you decline consent in Google's message, ads may continue, but non-personalised or limited. Alarms never depend on ads.</li>
+    </ul>
+
+    <h2 id="updates">App updates (Capgo)</h2>
+    <p>When you open Sahsah, or come back to it, the app checks whether a fix or improvement to its screens and text is available, downloads it in the background, and applies it the next time you leave the app. Before downloading and before applying, the app checks that no alarm is ringing, no snooze is pending, no wake-up mission is open and no alarm is due soon. The update service is <a href="https://capgo.app">Capgo</a>, which handles the check on our behalf. This applies on iPhone from version 1.0.1 and on Android from version 1.1.0.</p>
+    <ul>
+      <li><strong>Sent with each check:</strong> a random identifier the app generates itself (not the advertising identifier, not derived from device identifiers, and it does not link you to other apps), the app's identifier, the app and operating-system version numbers, the platform, the updater's version, whether the device is an emulator, and the install source. Capgo also sees the request's IP address, which it uses to determine the country and to deliver the update from the nearest server.</li>
+      <li><strong>Not sent:</strong> your alarms or their names, your preferences, your history, or anything about ads or your subscription. The updater's statistics are turned off, so Capgo receives no crash reports or usage data.</li>
+      <li><strong>Purpose:</strong> only to deliver the fixes that suit your version of the app. It is not used for ads or tracking.</li>
+      <li>The check is encrypted in transit, and every update is signed with our key, so the app accepts no update we did not sign.</li>
+      <li>Capgo processes this data under <a href="https://capgo.app/privacy/">its privacy policy</a>, and may process it on servers outside the Kingdom of Saudi Arabia.</li>
+      <li>With no internet, the app works fully on the version you have. Alarms never depend on the update service.</li>
     </ul>
 
     <h2 id="choices">3. Your choices: ads and consent</h2>
@@ -145,6 +157,7 @@
       <li><strong>Ads on iPhone:</strong> all non-personalised, on the basis given for non-personalised ads below; where Google requires your consent (such as in the EU), your consent through Google's message, which you can withdraw at any time as described in section 3.</li>
       <li><strong>Personalised ads on Android:</strong> our legitimate interest in offering the app free of charge, funded by ads, with your right to turn personalisation off at any time as described in section 3; where Google requires your consent (such as in the EU), your consent through Google's message.</li>
       <li><strong>Non-personalised ads:</strong> our legitimate interest in offering the app free of charge, funded by ads, limited to what Google needs to serve and measure the ad and prevent fraud.</li>
+      <li><strong>App updates:</strong> our legitimate interest in fixing and improving the app, limited to what is needed to pick and deliver the update that suits your version.</li>
     </ul>
 
     <h2>6. Retention and deletion</h2>
@@ -152,6 +165,7 @@
       <li>Data on your device stays until you delete it: delete an alarm in its editor, clear the history under <bdi lang="ar">«الإعدادات» ← «مسح سجل الصباحات»</bdi> (Settings → Clear wake history), or delete the app to erase all of its data from the phone.</li>
       <li>We keep no data about you, so we have nothing to delete.</li>
       <li>Google's retention is set by <a href="https://policies.google.com/technologies/retention">its policy</a>.</li>
+      <li>Capgo's retention of update-check records is set by <a href="https://capgo.app/privacy/">its policy</a>.</li>
     </ul>
 
     <h2>7. Your rights</h2>
